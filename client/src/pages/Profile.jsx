@@ -16,7 +16,7 @@ export default function Profile() {
   const handleRestart = async () => {
     if (window.confirm("Are you sure you want to restart your game? All progress, XP, and streak will be lost!")) {
       try {
-        const res = await fetch('http://localhost:5000/api/users/restart', {
+        const res = await fetch('/api/users/restart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id })
@@ -38,7 +38,7 @@ export default function Profile() {
   const handleDelete = async () => {
     if (window.confirm("Are you absolutely sure you want to delete your account? This action cannot be undone.")) {
       try {
-        const res = await fetch('http://localhost:5000/api/users/delete', {
+        const res = await fetch('/api/users/delete', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id })
@@ -120,3 +120,5 @@ export default function Profile() {
     </div>
   );
 }
+
+

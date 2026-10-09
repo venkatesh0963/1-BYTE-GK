@@ -22,7 +22,7 @@ const useGameStore = create((set, get) => ({
     }));
 
     try {
-      const res = await axios.get('http://localhost:5000/api/daily/today');
+      const res = await axios.get('/api/daily/today');
       set({ 
         questions: res.data.questions, 
         isLoading: false,
@@ -41,7 +41,7 @@ const useGameStore = create((set, get) => ({
     
     try {
       // Fetch from real database using the seriesName as topic
-      const res = await axios.get(`http://localhost:5000/api/questions?topic=${seriesName}`);
+      const res = await axios.get(`/api/questions?topic=${seriesName}`);
       const specificQuestions = res.data;
       
       if (specificQuestions.length > 0) {
@@ -93,7 +93,7 @@ const useGameStore = create((set, get) => ({
     try {
       const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
       const userId = storedUser._id;
-      const res = await axios.post('http://localhost:5000/api/daily/answer', {
+      const res = await axios.post('/api/daily/answer', {
         userId,
         questionId: currentQ._id,
         selectedAnswer: selectedOptionIndex,
@@ -132,3 +132,5 @@ const useGameStore = create((set, get) => ({
 }));
 
 export default useGameStore;
+
+

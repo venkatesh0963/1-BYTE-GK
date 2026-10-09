@@ -16,8 +16,8 @@ export default function Dashboard() {
         const userId = storedUser._id || '';
         
         const [activityRes, masteryRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/users/activity?userId=${userId}`),
-          axios.get(`http://localhost:5000/api/users/mastery?userId=${userId}`)
+          axios.get(`/api/users/activity?userId=${userId}`),
+          axios.get(`/api/users/mastery?userId=${userId}`)
         ]);
         
         // Heatmap logic
@@ -197,3 +197,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+

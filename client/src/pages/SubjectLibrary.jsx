@@ -12,7 +12,7 @@ export default function SubjectLibrary() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/subjects');
+        const res = await axios.get('/api/subjects');
         setSubjects(res.data);
       } catch (err) {
         console.error(err);
@@ -32,7 +32,7 @@ export default function SubjectLibrary() {
     // Fetch series if not already loaded
     if (!seriesData[id]) {
       try {
-        const res = await axios.get(`http://localhost:5000/api/subjects/${sub.slug}/series`);
+        const res = await axios.get(`/api/subjects/${sub.slug}/series`);
         setSeriesData(prev => ({ ...prev, [id]: res.data }));
       } catch (err) {
         console.error(err);
@@ -115,3 +115,5 @@ export default function SubjectLibrary() {
     </div>
   );
 }
+
+
