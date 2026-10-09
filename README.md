@@ -1,5 +1,9 @@
 # 1 Byte GK 🧠⚡
 
+<div align="center">
+  <img src="./client/src/assets/hero.png" alt="1 Byte GK Banner" width="800"/>
+</div>
+
 > Sharpen Your Mind with 1 Byte GK – 50 Questions. 1 Daily Streak. 1 Byte Smarter.
 
 1 Byte GK is a full-stack gamified General Knowledge learning platform designed to make learning fun, interactive, and rewarding. Whether you are preparing for competitive exams or just want to improve your general knowledge, 1 Byte GK helps you stay consistent.
@@ -11,6 +15,18 @@
 - **🏆 Leaderboards:** Compete with others and track your global ranking.
 - **📚 Subject-Wise Learning:** Practice specific subjects like History, Polity, Geography, Science, English, and General Aptitude.
 - **👑 Flexible Plans:** Choose between Normal and Pro subscription tiers to unlock premium question series, Previous Year Questions (PYQs), and advanced analytics.
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Landing+Page" alt="Landing Page" width="400"/>
+  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Dashboard+%26+Stats" alt="Dashboard" width="400"/>
+  <br/>
+  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Daily+Challenge" alt="Daily Challenge" width="400"/>
+  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Leaderboard" alt="Leaderboard" width="400"/>
+</div>
+
+> **Note:** To update these placeholders, take screenshots of your app, save them in a folder (e.g., `docs/` or `client/src/assets/`), and update the `src` paths in the README!
 
 ## 🛠️ Tech Stack
 
