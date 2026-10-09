@@ -1,10 +1,10 @@
-# 1 Byte GK 🧠⚡
-
 <div align="center">
-  <img src="./client/src/assets/hero.png" alt="1 Byte GK Banner" width="800"/>
+  <img src="./docs/logo.png" alt="1 Byte GK Logo" width="350"/>
+  <br/><br/>
+  <img src="./docs/slogan.png" alt="Sharpen Your Mind - 50 Questions. 1 Daily Streak. 1 Byte Smarter." width="600"/>
 </div>
 
-> Sharpen Your Mind with 1 Byte GK – 50 Questions. 1 Daily Streak. 1 Byte Smarter.
+<br/>
 
 1 Byte GK is a full-stack gamified General Knowledge learning platform designed to make learning fun, interactive, and rewarding. Whether you are preparing for competitive exams or just want to improve your general knowledge, 1 Byte GK helps you stay consistent.
 
