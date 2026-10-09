@@ -1,7 +1,5 @@
 <div align="center">
   <img src="./docs/logo.png" alt="1 Byte GK Logo" width="350"/>
-  <br/><br/>
-  <img src="./docs/slogan.png" alt="Sharpen Your Mind - 50 Questions. 1 Daily Streak. 1 Byte Smarter." width="600"/>
 </div>
 
 <br/>
