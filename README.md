@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/logo.png" alt="1 Byte GK Logo" width="350"/>
+  <img src="./docs/logo-hq.png" alt="1 Byte GK Logo" width="450"/>
 </div>
 
 <br/>
