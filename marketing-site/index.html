@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Byte GK | Learn • Play • Grow</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colors */
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --secondary: #8b5cf6;
+            --accent-yellow: #facc15;
+            --accent-orange: #f97316;
+            --accent-green: #22c55e;
+            --accent-blue: #0ea5e9;
+            --bg-color: #f8fafc;
+            --bg-pastel: #eff6ff;
+            --text-dark: #0f172a;
+            --text-gray: #475569;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --navy: #0f172a;
+            
+            /* Shadows for Claymorphism */
+            --clay-card: 10px 10px 20px rgba(0, 0, 0, 0.05),
+                         -10px -10px 20px rgba(255, 255, 255, 0.8),
+                         inset 2px 2px 5px rgba(255, 255, 255, 1),
+                         inset -3px -3px 7px rgba(0, 0, 0, 0.03);
+            
+            --clay-btn: 4px 4px 10px rgba(0, 0, 0, 0.1),
+                        -4px -4px 10px rgba(255, 255, 255, 0.9),
+                        inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+                        inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+                        
+            --clay-btn-primary: 4px 4px 10px rgba(79, 70, 229, 0.3),
+                                inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+                                inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+
+            --clay-pill: 2px 4px 8px rgba(0,0,0,0.05), 
+                         inset 1px 2px 3px rgba(255,255,255,0.9);
+            
+            --clay-hover: 12px 12px 24px rgba(0, 0, 0, 0.08),
+                          -12px -12px 24px rgba(255, 255, 255, 0.9),
+                          inset 2px 2px 5px rgba(255, 255, 255, 1),
+                          inset -3px -3px 7px rgba(0, 0, 0, 0.03);
+                          
+            /* Animations */
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .clay-card {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--clay-card);
+            padding: 32px;
+            transition: var(--transition);
+        }
+
+        .clay-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--clay-hover);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--bg-pastel);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            box-shadow: var(--clay-pill);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            box-shadow: var(--clay-btn-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 8px 15px rgba(79, 70, 229, 0.4), inset 2px 2px 4px rgba(255,255,255,0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text-dark);
+            box-shadow: var(--clay-btn);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes float-slow {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .float { animation: float 4s ease-in-out infinite; }
+        .float-delayed { animation: float 4s ease-in-out 2s infinite; }
+        .float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-yellow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.1), 2px 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-5deg);
+        }
+
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo-text p {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--bg-pastel) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 24px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .hero-feature-icon {
+            background: var(--white);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--clay-pill);
+        }
+
+        /* Hero 3D Visual */
+        .hero-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 320px;
+            height: 650px;
+            background: var(--bg-pastel);
+            border-radius: 40px;
+            border: 12px solid var(--white);
+            box-shadow: 15px 25px 40px rgba(0,0,0,0.1), inset 5px 5px 15px rgba(255,255,255,1), inset -5px -5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 25px;
+            background: var(--white);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .phone-mockup .logo-icon {
+            width: 64px;
+            height: 64px;
+            font-size: 32px;
+            margin-bottom: 16px;
+            margin-top: 20px;
+        }
+
+        .daily-challenge-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 24px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--clay-btn);
+            margin-top: 20px;
+        }
+
+        .daily-challenge-card h4 {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .daily-challenge-card h2 {
+            font-size: 4rem;
+            color: var(--text-dark);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .daily-challenge-card p {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .daily-challenge-card .btn-primary {
+            width: 100%;
+        }
+
+        .visual-element {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--clay-card);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .v-book-1 { top: 20%; left: -20px; padding: 12px 20px; font-weight: 800; background: #fee2e2; color: #b91c1c; transform: rotate(-10deg); }
+        .v-book-2 { top: 30%; left: -40px; padding: 12px 20px; font-weight: 800; background: #e0e7ff; color: #4338ca; transform: rotate(-5deg); }
+        .v-book-3 { top: 40%; left: -20px; padding: 12px 20px; font-weight: 800; background: #dcfce7; color: #15803d; transform: rotate(5deg); }
+        
+        .v-globe { top: 15%; right: -20px; width: 80px; height: 80px; font-size: 50px; border-radius: 50%; background: var(--bg-pastel); }
+        .v-trophy { bottom: 15%; left: -30px; width: 90px; height: 90px; font-size: 60px; border-radius: 50%; background: #fef9c3; }
+        
+        .v-streak {
+            bottom: 10%;
+            right: -50px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .v-streak h3 { font-size: 1.5rem; color: var(--accent-orange); }
+        .v-streak p { font-size: 0.8rem; font-weight: 800; }
+
+        .v-xp {
+            top: 5%;
+            right: 50px;
+            padding: 8px 16px;
+            background: var(--accent-yellow);
+            color: #854d0e;
+            font-weight: 900;
+            border-radius: 50px;
+            transform: rotate(15deg);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 500px;
+            background: var(--bg-pastel);
+            border-radius: 40px;
+            box-shadow: inset 5px 5px 15px rgba(255,255,255,1), inset -5px -5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 200px;
+        }
+
+        .about-visual::after {
+            content: '💻';
+            position: absolute;
+            font-size: 120px;
+            bottom: 50px;
+            right: 50px;
+        }
+        
+        .about-visual::before {
+            content: '💡';
+            position: absolute;
+            font-size: 80px;
+            top: 50px;
+            left: 50px;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .about-content > p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-color);
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: var(--clay-pill);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Study Materials */
+        .study {
+            background: var(--bg-pastel);
+        }
+        
+        .study-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .study-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .subject-card {
+            padding: 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .subject-card .icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .subject-card:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .subject-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .subject-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .subject-series {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: var(--bg-pastel);
+            padding: 6px 12px;
+            border-radius: 50px;
+            margin-top: auto;
+        }
+        
+        .subject-card::after {
+            content: '→';
+            position: absolute;
+            bottom: -30px;
+            right: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .subject-card:hover::after {
+            bottom: 24px;
+        }
+
+        /* How it Works */
+        .steps {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 64px;
+            position: relative;
+        }
+        
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bg-pastel) 0%, var(--primary-light) 50%, var(--bg-pastel) 100%);
+            z-index: 0;
+            border-radius: 4px;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            padding: 24px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 0 auto 24px;
+            box-shadow: var(--clay-btn);
+            border: 4px solid var(--white);
+        }
+
+        .step-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .step-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Gamification */
+        .gamification {
+            background: var(--bg-color);
+            position: relative;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .game-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        .game-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: var(--bg-pastel);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 2px 2px 5px rgba(255,255,255,1), inset -2px -2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .game-card:nth-child(4), .game-card:nth-child(5) {
+            grid-column: span 1.5;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: var(--bg-pastel);
+            text-align: center;
+        }
+
+        .pricing-toggle {
+            display: inline-flex;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 6px;
+            margin: 40px 0 64px;
+            box-shadow: var(--clay-btn);
+        }
+
+        .pricing-toggle button {
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .pricing-toggle button.active {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--clay-btn-primary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .price-card {
+            padding: 40px 24px;
+            text-align: left;
+            position: relative;
+        }
+
+        .price-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .price-card .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .price-card ul {
+            margin-bottom: 32px;
+        }
+
+        .price-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+        
+        .price-card li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 900;
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+        .pro-plans {
+            display: none;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+        
+        .pro-card {
+            border: 2px solid transparent;
+            background: linear-gradient(var(--white), var(--white)) padding-box, 
+                        linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .test-card {
+            padding: 40px;
+        }
+
+        .stars {
+            color: var(--accent-yellow);
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+
+        .test-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .test-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .test-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--primary);
+            box-shadow: var(--clay-btn);
+        }
+
+        .test-name strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .test-name span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 64px auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 24px 32px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 32px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 32px 24px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Final CTA */
+        .cta {
+            padding: 60px 24px;
+            background: var(--white);
+        }
+
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            border-radius: 40px;
+            padding: 80px 40px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 10px 20px 40px rgba(79, 70, 229, 0.2);
+        }
+
+        .cta-container h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-container p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding: 16px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-btn:hover {
+            background: var(--bg-pastel);
+            color: var(--primary-dark);
+        }
+
+        .cta-deco {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .d-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .d-2 { bottom: 10%; right: 10%; animation-delay: 1s; }
+        .d-3 { top: 20%; right: 20%; animation-delay: 0.5s; font-size: 3rem; }
+        .d-4 { bottom: 20%; left: 20%; animation-delay: 1.5s; font-size: 3rem; }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 64px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo .logo-icon {
+            box-shadow: none;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+        }
+
+        .footer-col p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .newsletter-input {
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        .newsletter-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: var(--white);
+            width: 90%;
+            max-width: 450px;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        .modal-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .modal p {
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: 2px solid var(--bg-pastel);
+            background: var(--bg-color);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        .modal .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        
+        .modal-footer a {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container, .about-container { gap: 32px; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-visual { height: 500px; }
+            .phone-mockup { transform: scale(0.8); }
+            
+            .steps-container { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .steps-container::before { display: none; }
+            
+            .game-grid, .test-grid { grid-template-columns: repeat(2, 1fr); }
+            .game-card:nth-child(4), .game-card:nth-child(5) { grid-column: auto; }
+            
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid .footer-col:first-child { grid-column: span 3; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions { display: none; }
+            .hamburger { display: block; }
+            
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content p, .hero-buttons, .hero-features { margin-left: auto; margin-right: auto; justify-content: center; }
+            .hero-features { flex-wrap: wrap; }
+            
+            .about-container { grid-template-columns: 1fr; }
+            .about-visual { height: 400px; grid-row: 1; }
+            .about-content { text-align: center; }
+            
+            .game-grid, .test-grid, .pricing-grid { grid-template-columns: 1fr; }
+            
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-grid .footer-col:first-child { grid-column: span 1; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            
+            .cta-container h2 { font-size: 2rem; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100vh;
+            background: var(--white);
+            z-index: 1000;
+            box-shadow: 20px 0 50px rgba(0,0,0,0.1);
+            padding: 80px 32px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mobile-menu.open { left: 0; }
+        
+        .mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        
+        .mobile-menu .btn {
+            margin-top: 20px;
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">💡</div>
+                <div class="logo-text">
+                    <h2>1 Byte GK</h2>
+                    <p>Learn • Play • Grow</p>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#study">Study Materials</a>
+                <a href="#about">About App</a>
+                <a href="#pricing">Subscription Plans</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="openModal('loginModal')">Login</button>
+                <button class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+            
+            <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" onclick="toggleMobileMenu()">×</button>
+        <a href="#hero" onclick="toggleMobileMenu()">Home</a>
+        <a href="#study" onclick="toggleMobileMenu()">Study Materials</a>
+        <a href="#about" onclick="toggleMobileMenu()">About App</a>
+        <a href="#pricing" onclick="toggleMobileMenu()">Subscription Plans</a>
+        <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <button class="btn btn-secondary" style="width:100%" onclick="toggleMobileMenu(); openModal('loginModal')">Login</button>
+        <button class="btn btn-primary" style="width:100%" onclick="toggleMobileMenu(); openModal('signupModal')">Sign Up</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <div class="badge">🔥 Daily Streaks • ⭐ XP Points • 🏆 Leaderboard</div>
+                <h1>Sharpen Your Mind with <br><span class="gradient-text">1 Byte GK</span></h1>
+                <h3>50 Questions. 1 Daily Streak. 1 Byte Smarter.</h3>
+                <p>1 Byte GK is a gamified General Knowledge learning platform that helps you build knowledge, maintain daily streaks, earn XP points and grow — one question at a time.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openModal('quizModal')">Start Quiz →</button>
+                    <a href="#study" class="btn btn-secondary">Explore Subjects</a>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="hero-feature"><div class="hero-feature-icon">⚡</div> 50 Daily Questions</div>
+                    <div class="hero-feature"><div class="hero-feature-icon">🔥</div> Maintain Streak</div>
+                    <div class="hero-feature"><div class="hero-feature-icon">⭐</div> Earn XP Points</div>
+                    <div class="hero-feature"><div class="hero-feature-icon">🏆</div> Track Progress</div>
+                </div>
+            </div>
+            
+            <div class="hero-visual reveal">
+                <div class="phone-mockup float">
+                    <div class="phone-notch"></div>
+                    <div class="logo-icon">💡</div>
+                    <h3 style="font-weight: 900;">1 Byte GK</h3>
+                    
+                    <div class="daily-challenge-card">
+                        <h4>Daily Challenge</h4>
+                        <h2>50</h2>
+                        <p>Questions</p>
+                        <button class="btn btn-primary" style="padding: 10px; font-size: 0.9rem;" onclick="openModal('quizModal')">Start Now →</button>
+                    </div>
+                </div>
+                
+                <div class="visual-element v-book-1 float-delayed">📚 History</div>
+                <div class="visual-element v-book-2 float-slow">📚 Polity</div>
+                <div class="visual-element v-book-3 float">📚 Geography</div>
+                <div class="visual-element v-globe float-delayed">🌍</div>
+                <div class="visual-element v-trophy float-slow">🏆</div>
+                <div class="visual-element v-xp float">⭐ +10 XP</div>
+                
+                <div class="visual-element v-streak float-delayed">
+                    <h3>🔥 12</h3>
+                    <p>Day Streak</p>
+                </div>
+                
+                <!-- Graduation cap emoji near the top left -->
+                <div style="position: absolute; top: 5%; left: 0; font-size: 60px; z-index: 25;" class="float">🎓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About App Section -->
+    <section class="section about" id="about">
+        <div class="container about-container">
+            <div class="about-visual reveal float-slow">
+                👨‍🎓
+            </div>
+            
+            <div class="about-content reveal">
+                <div class="badge">ABOUT 1 BYTE GK</div>
+                <h2>Your Smart Companion for General Knowledge</h2>
+                <p>1 Byte GK combines learning and gamification to make General Knowledge preparation fun, consistent and rewarding. Learn through daily quizzes, explore subject-wise question series, earn XP and build a learning streak every day.</p>
+                
+                <div class="feature-cards">
+                    <div class="clay-card feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h4>Gamified Learning</h4>
+                        <p>Make learning fun with XP, levels and rewards.</p>
+                    </div>
+                    <div class="clay-card feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h4>Subject-wise Questions</h4>
+                        <p>Learn GK through structured subject and topic-based series.</p>
+                    </div>
+                    <div class="clay-card feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <h4>XP & Streaks</h4>
+                        <p>Stay consistent and get rewarded for your progress.</p>
+                    </div>
+                    <div class="clay-card feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h4>Performance Analytics</h4>
+                        <p>Understand your strengths and improve weak areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Materials Section -->
+    <section class="section study" id="study">
+        <div class="container">
+            <div class="study-header reveal">
+                <div class="badge">EXPLORE</div>
+                <h2>Study Materials</h2>
+                <p style="color: var(--text-gray); font-size: 1.1rem;">Explore subject-wise GK question series designed to help you build knowledge and prepare smarter.</p>
+            </div>
+            
+            <div class="subject-grid">
+                <!-- Subject Cards -->
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🏛️</div>
+                    <h3>History</h3>
+                    <p>Ancient, Medieval & Modern History</p>
+                    <div class="subject-series">15 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">⚖️</div>
+                    <h3>Polity</h3>
+                    <p>Constitution, Parliament & Governance</p>
+                    <div class="subject-series">12 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🏙️</div>
+                    <h3>Civics</h3>
+                    <p>Rights, Duties & Government</p>
+                    <div class="subject-series">8 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🌍</div>
+                    <h3>Geography</h3>
+                    <p>India & World Geography</p>
+                    <div class="subject-series">20 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🇬🇧</div>
+                    <h3>English</h3>
+                    <p>Vocabulary & Grammar</p>
+                    <div class="subject-series">10 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🧮</div>
+                    <h3>General Aptitude</h3>
+                    <p>Logical & Quantitative Aptitude</p>
+                    <div class="subject-series">25 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🔬</div>
+                    <h3>General Science</h3>
+                    <p>Physics, Chemistry & Biology</p>
+                    <div class="subject-series">18 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">💻</div>
+                    <h3>Computer</h3>
+                    <p>Computer Awareness & Technology</p>
+                    <div class="subject-series">5 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">💰</div>
+                    <h3>Economics</h3>
+                    <p>Indian & World Economy</p>
+                    <div class="subject-series">10 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">📰</div>
+                    <h3>Current Affairs</h3>
+                    <p>Important Current Events</p>
+                    <div class="subject-series">30 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🏆</div>
+                    <h3>Sports</h3>
+                    <p>Sports GK & Major Events</p>
+                    <div class="subject-series">6 Series</div>
+                </div>
+                <div class="clay-card subject-card reveal">
+                    <div class="icon">🎭</div>
+                    <h3>Art & Culture</h3>
+                    <p>Indian Culture, Art & Heritage</p>
+                    <div class="subject-series">9 Series</div>
+                </div>
+            </div>
+            
+            <div class="text-center reveal">
+                <a href="#pricing" class="btn btn-secondary" style="padding: 16px 40px; font-size: 1.1rem;">Explore All Subjects →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="section steps" id="how-it-works">
+        <div class="container">
+            <div class="study-header reveal">
+                <h2>Learn. Play. Improve.</h2>
+            </div>
+            
+            <div class="steps-container reveal">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h3>Start</h3>
+                    <p>Start your daily GK challenge.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h3>Solve</h3>
+                    <p>Answer 50 carefully selected questions.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h3>Earn</h3>
+                    <p>Earn XP for answering questions and maintaining your streak.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h3>Grow</h3>
+                    <p>Track your progress and improve every day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gamification Section -->
+    <section class="section gamification">
+        <div class="container">
+            <div class="study-header reveal">
+                <h2>Turn Knowledge Into a Game</h2>
+            </div>
+            
+            <div class="game-grid reveal">
+                <div class="clay-card game-card">
+                    <div class="icon">🔥</div>
+                    <h3>Daily Streak</h3>
+                    <p style="margin-top:10px; color:var(--text-gray);">Build a streak by completing your daily challenge.</p>
+                </div>
+                <div class="clay-card game-card">
+                    <div class="icon">⭐</div>
+                    <h3>XP Points</h3>
+                    <p style="margin-top:10px; color:var(--text-gray);">Earn XP every time you answer questions.</p>
+                </div>
+                <div class="clay-card game-card">
+                    <div class="icon">🏆</div>
+                    <h3>Leaderboard</h3>
+                    <p style="margin-top:10px; color:var(--text-gray);">Compete with other learners.</p>
+                </div>
+                <div class="clay-card game-card">
+                    <div class="icon">🎖️</div>
+                    <h3>Achievements</h3>
+                    <p style="margin-top:10px; color:var(--text-gray);">Unlock badges as you progress.</p>
+                </div>
+                <div class="clay-card game-card">
+                    <div class="icon">📈</div>
+                    <h3>Progress</h3>
+                    <p style="margin-top:10px; color:var(--text-gray);">Track your learning journey.</p>
+                </div>
+            </div>
+            
+            <!-- Floating decorations -->
+            <div style="position:absolute; top:20%; left:5%; font-size:40px; opacity:0.6;" class="float">⭐</div>
+            <div style="position:absolute; bottom:20%; right:5%; font-size:40px; opacity:0.6;" class="float-slow">🔥</div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans Section -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="study-header reveal" style="margin-bottom: 20px;">
+                <div class="badge">CHOOSE YOUR PLAN</div>
+                <h2>Learn More. Practice More. Grow Faster.</h2>
+            </div>
+            
+            <div class="pricing-toggle reveal">
+                <button class="active" id="btnNormal" onclick="togglePricing('normal')">Normal Plan</button>
+                <button id="btnPro" onclick="togglePricing('pro')">Pro Plan</button>
+            </div>
+            
+            <!-- Normal Plans -->
+            <div class="pricing-grid normal-plans reveal" id="normalPlans">
+                <div class="clay-card price-card">
+                    <h3>1 Month</h3>
+                    <div class="price">₹99</div>
+                    <ul>
+                        <li>50 daily questions</li>
+                        <li>Basic subjects</li>
+                        <li>Progress tracking</li>
+                        <li>Basic leaderboard</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openModal('signupModal')">Get Started</button>
+                </div>
+                
+                <div class="clay-card price-card">
+                    <h3>3 Months</h3>
+                    <div class="price">₹249</div>
+                    <ul>
+                        <li>50 daily questions</li>
+                        <li>Basic subjects</li>
+                        <li>Progress tracking</li>
+                        <li>Basic leaderboard</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openModal('signupModal')">Get Started</button>
+                </div>
+                
+                <div class="clay-card price-card">
+                    <h3>6 Months</h3>
+                    <div class="price">₹449</div>
+                    <ul>
+                        <li>50 daily questions</li>
+                        <li>Basic subjects</li>
+                        <li>Progress tracking</li>
+                        <li>Basic leaderboard</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openModal('signupModal')">Get Started</button>
+                </div>
+                
+                <div class="clay-card price-card">
+                    <h3>1 Year</h3>
+                    <div class="price">₹799</div>
+                    <ul>
+                        <li>50 daily questions</li>
+                        <li>Basic subjects</li>
+                        <li>Progress tracking</li>
+                        <li>Basic leaderboard</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="openModal('signupModal')">Get Started</button>
+                </div>
+            </div>
+            
+            <!-- Pro Plans -->
+            <div class="pricing-grid pro-plans" id="proPlans">
+                <div class="clay-card price-card">
+                    <h3>1 Month</h3>
+                    <div class="price">₹149</div>
+                    <ul>
+                        <li>Everything in Normal</li>
+                        <li>All subjects</li>
+                        <li>Premium question series</li>
+                        <li>Unlimited practice</li>
+                        <li>Advanced analytics</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('signupModal')">Go Pro →</button>
+                </div>
+                
+                <div class="clay-card price-card pro-card transform hover:-translate-y-2 transition-transform">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>3 Months</h3>
+                    <div class="price">₹399</div>
+                    <ul>
+                        <li>Everything in Normal</li>
+                        <li>All subjects</li>
+                        <li>Premium question series</li>
+                        <li>Unlimited practice</li>
+                        <li>Advanced analytics</li>
+                        <li>Mock tests</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('signupModal')">Go Pro →</button>
+                </div>
+                
+                <div class="clay-card price-card">
+                    <h3>6 Months</h3>
+                    <div class="price">₹699</div>
+                    <ul>
+                        <li>Everything in Normal</li>
+                        <li>All subjects</li>
+                        <li>Premium question series</li>
+                        <li>Unlimited practice</li>
+                        <li>Advanced analytics</li>
+                        <li>Mock tests</li>
+                        <li>Previous-year questions</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('signupModal')">Go Pro →</button>
+                </div>
+                
+                <div class="clay-card price-card">
+                    <h3>1 Year</h3>
+                    <div class="price">₹1,199</div>
+                    <ul>
+                        <li>Everything in Normal</li>
+                        <li>All subjects</li>
+                        <li>Premium question series</li>
+                        <li>Unlimited practice</li>
+                        <li>Advanced analytics</li>
+                        <li>Mock tests</li>
+                        <li>Previous-year questions</li>
+                        <li>Advanced leaderboard</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openModal('signupModal')">Go Pro →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="study-header reveal">
+                <h2>Loved by Curious Learners</h2>
+            </div>
+            
+            <div class="test-grid reveal">
+                <div class="clay-card test-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-quote">“1 Byte GK makes GK practice feel much more fun. The streak system keeps me coming back every day.”</p>
+                    <div class="test-author">
+                        <div class="test-avatar">A</div>
+                        <div class="test-name">
+                            <strong>Aditi</strong>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clay-card test-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-quote">“The subject-wise questions make my exam preparation much more organized. Highly recommend it!”</p>
+                    <div class="test-author">
+                        <div class="test-avatar">R</div>
+                        <div class="test-name">
+                            <strong>Rahul</strong>
+                            <span>Competitive Exam Aspirant</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clay-card test-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="test-quote">“I love earning XP while learning. It feels more like a game than studying. Best GK app out there.”</p>
+                    <div class="test-author">
+                        <div class="test-avatar">P</div>
+                        <div class="test-name">
+                            <strong>Priya</strong>
+                            <span>Learner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="study-header reveal" style="margin-bottom: 0;">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container reveal">
+                <div class="clay-card faq-item active">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is 1 Byte GK?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        1 Byte GK is a gamified General Knowledge learning platform designed to make preparation fun, consistent, and highly rewarding through daily challenges and subject-wise series.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How does the daily 50-question challenge work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Every day, you are presented with a fresh set of 50 mixed General Knowledge questions. Answering them correctly earns you XP and maintains your daily streak.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How does the streak system work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Complete your daily 50-question challenge to extend your streak by one day. If you miss a day, your streak resets to zero. Consistency is the key to building high streaks!
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do XP points work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        You earn Experience Points (XP) for every correct answer. Bonus XP is awarded for completing daily challenges and hitting streak milestones. XP determines your rank on the global leaderboard.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What subjects are available?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        We offer a comprehensive curriculum covering History, Polity, Civics, Geography, English, General Aptitude, Science, Computer Awareness, Economics, Current Affairs, Sports, and Art & Culture.
+                    </div>
+                </div>
+
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is included in the Normal plan?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The Normal plan includes access to the 50 daily questions, basic subject series, standard progress tracking, and the basic leaderboard.
+                    </div>
+                </div>
+
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is included in the Pro plan?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The Pro plan unlocks everything! You get unlimited practice, all premium subject series, advanced analytics, full mock tests, previous-year question papers, and the advanced leaderboard.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I change my subscription?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, you can upgrade, downgrade, or change your billing cycle at any time from your account settings.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I cancel my subscription?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely. You can cancel your subscription at any time. You will retain access to your premium features until the end of your current billing cycle.
+                    </div>
+                </div>
+                
+                <div class="clay-card faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I practice questions outside the daily challenge?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! You can explore our Study Materials section to dive deep into specific subjects and take topic-wise quizzes whenever you like.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta">
+        <div class="cta-container reveal">
+            <div class="cta-deco d-1 float">🔥</div>
+            <div class="cta-deco d-2 float-slow">⭐</div>
+            <div class="cta-deco d-3 float-delayed">🏆</div>
+            <div class="cta-deco d-4 float">🌍</div>
+            
+            <h2>Ready to Make GK a Daily Habit?</h2>
+            <p>Start with 50 questions today. Build your streak. Earn XP. Become smarter, one byte at a time.</p>
+            <button class="btn cta-btn" onclick="openModal('quizModal')">Start Your First Quiz →</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">💡</div>
+                        <h2 style="margin: 0; line-height: 1;">1 Byte GK</h2>
+                    </div>
+                    <p>Smarter Learning. Brighter Future.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">X</a>
+                        <a href="#" class="social-icon">Ig</a>
+                        <a href="#" class="social-icon">Yt</a>
+                        <a href="#" class="social-icon">In</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#study">Study Materials</a></li>
+                        <li><a href="#about">About App</a></li>
+                        <li><a href="#pricing">Subscription Plans</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Subjects</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Polity</a></li>
+                        <li><a href="#">Civics</a></li>
+                        <li><a href="#">Geography</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">General Aptitude</a></li>
+                        <li><a href="#">Science</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Stay Updated. Get the latest updates, new features and special offers.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" id="newsEmail" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    </form>
+                    <p id="newsMessage" style="color: var(--accent-green); margin-top: 10px; display: none; font-weight: bold;">You're on the list! 🎉</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>© 2026 1 Byte GK. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <span>•</span>
+                    <a href="#">Terms</a>
+                    <span>•</span>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <button class="modal-back" onclick="closeModal('loginModal')">←</button>
+            <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+            <h2>Welcome Back</h2>
+            <p>Log in to continue your learning journey.</p>
+            
+            <form onsubmit="event.preventDefault(); closeModal('loginModal');">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <div class="modal-footer">
+                Don't have an account? <a href="#" onclick="closeModal('loginModal'); setTimeout(()=>openModal('signupModal'), 300)">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal">
+            <button class="modal-back" onclick="closeModal('signupModal')">←</button>
+            <button class="modal-close" onclick="closeModal('signupModal')">×</button>
+            <h2>Create Account</h2>
+            <p>Join 1 Byte GK and start your daily streak.</p>
+            
+            <form onsubmit="event.preventDefault(); closeModal('signupModal');">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Free Account</button>
+            </form>
+            
+            <div class="modal-footer">
+                Already have an account? <a href="#" onclick="closeModal('signupModal'); setTimeout(()=>openModal('loginModal'), 300)">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz CTA Modal -->
+    <div class="modal-overlay" id="quizModal">
+        <div class="modal text-center" style="padding: 60px 40px;">
+            <button class="modal-close" onclick="closeModal('quizModal')">×</button>
+            <div style="font-size: 60px; margin-bottom: 20px;" class="float">🚀</div>
+            <h2>Your GK journey starts here!</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 40px;">Log in or create a free account to take your first Daily Challenge.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <button class="btn btn-primary" onclick="closeModal('quizModal'); setTimeout(()=>openModal('loginModal'), 300)">Login to Start</button>
+                <button class="btn btn-secondary" onclick="closeModal('quizModal'); setTimeout(()=>openModal('signupModal'), 300)">Create Free Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll Reveal Animation
+            reveal();
+        });
+
+        // Scroll Reveal Function
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        // Trigger once on load
+        window.addEventListener('load', reveal);
+
+        // Smooth Scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            // Close all others
+            const allItems = document.querySelectorAll('.faq-item');
+            const parent = button.parentElement;
+            
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active');
+            } else {
+                allItems.forEach(item => item.classList.remove('active'));
+                parent.classList.add('active');
+            }
+        }
+
+        // Pricing Toggle
+        function togglePricing(plan) {
+            const btnNormal = document.getElementById('btnNormal');
+            const btnPro = document.getElementById('btnPro');
+            const normalPlans = document.getElementById('normalPlans');
+            const proPlans = document.getElementById('proPlans');
+
+            if (plan === 'normal') {
+                btnNormal.classList.add('active');
+                btnPro.classList.remove('active');
+                normalPlans.style.display = 'grid';
+                proPlans.style.display = 'none';
+            } else {
+                btnNormal.classList.remove('active');
+                btnPro.classList.add('active');
+                normalPlans.style.display = 'none';
+                
+                // Set to grid but handle responsive layout via media queries implicitly 
+                // since the class .pricing-grid has the CSS rules
+                proPlans.style.display = 'grid'; 
+                
+                // Trigger reveal animation for pro plans
+                proPlans.classList.add('reveal');
+                setTimeout(() => proPlans.classList.add('active'), 50);
+            }
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Newsletter Form
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const input = document.getElementById('newsEmail');
+            const msg = document.getElementById('newsMessage');
+            if (input.value) {
+                msg.style.display = 'block';
+                input.value = '';
+                setTimeout(() => {
+                    msg.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
