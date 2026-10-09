@@ -23,10 +23,8 @@
   <img src="./docs/dashboard.png" alt="Dashboard" width="400"/>
   <br/>
   <img src="./docs/daily-challenge.png" alt="Daily Challenge" width="400"/>
-  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Leaderboard" alt="Leaderboard" width="400"/>
+  <img src="./docs/leaderboard.png" alt="Leaderboard" width="400"/>
 </div>
-
-> **Note:** To update these placeholders, take screenshots of your app, save them in a folder (e.g., `docs/` or `client/src/assets/`), and update the `src` paths in the README!
 
 ## 🛠️ Tech Stack
 
