@@ -1,18 +1,18 @@
-# 1 Byte GK ???
+# 1 Byte GK 🧠⚡
 
-> Sharpen Your Mind with 1 Byte GK � 50 Questions. 1 Daily Streak. 1 Byte Smarter.
+> Sharpen Your Mind with 1 Byte GK – 50 Questions. 1 Daily Streak. 1 Byte Smarter.
 
 1 Byte GK is a full-stack gamified General Knowledge learning platform designed to make learning fun, interactive, and rewarding. Whether you are preparing for competitive exams or just want to improve your general knowledge, 1 Byte GK helps you stay consistent.
 
-## ? Features
+## ✨ Features
 
-- **?? Daily Challenges:** Answer 50 questions daily to keep your mind sharp.
-- **? Streaks & XP:** Maintain your daily streak and earn XP points for your progress.
-- **?? Leaderboards:** Compete with others and track your global ranking.
-- **?? Subject-Wise Learning:** Practice specific subjects like History, Polity, Geography, Science, English, and General Aptitude.
-- **?? Flexible Plans:** Choose between Normal and Pro subscription tiers to unlock premium question series, Previous Year Questions (PYQs), and advanced analytics.
+- **🔥 Daily Challenges:** Answer 50 questions daily to keep your mind sharp.
+- **⚡ Streaks & XP:** Maintain your daily streak and earn XP points for your progress.
+- **🏆 Leaderboards:** Compete with others and track your global ranking.
+- **📚 Subject-Wise Learning:** Practice specific subjects like History, Polity, Geography, Science, English, and General Aptitude.
+- **👑 Flexible Plans:** Choose between Normal and Pro subscription tiers to unlock premium question series, Previous Year Questions (PYQs), and advanced analytics.
 
-## ??? Tech Stack
+## 🛠️ Tech Stack
 
 **Frontend (Client)**
 - React (Vite)
@@ -26,7 +26,7 @@
 - MongoDB & Mongoose
 - JSON Web Tokens (JWT) & bcryptjs (Authentication)
 
-## ?? Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v18 or higher)
@@ -75,11 +75,11 @@
 4. **Open in Browser:**
    Visit `http://localhost:3000` to view the application!
 
-## ?? Deployment (Vercel)
+## 📦 Deployment (Vercel)
 
 This project is configured as a Monorepo and is ready to be deployed on **Vercel**.
 - The `vercel.json` file in the root directory automatically configures Vercel to build the Vite frontend and expose the Express backend as Serverless Functions.
 - Ensure you set the required environment variables (`MONGO_URI`, `JWT_SECRET`) in your Vercel project settings.
 
 ---
-*Built with ?? for learners everywhere.*
+*Built with ❤️ for learners everywhere.*
