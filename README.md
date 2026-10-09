@@ -20,7 +20,7 @@
 
 <div align="center">
   <img src="./docs/landing-page.png" alt="Landing Page" width="400"/>
-  <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Dashboard+%26+Stats" alt="Dashboard" width="400"/>
+  <img src="./docs/dashboard.png" alt="Dashboard" width="400"/>
   <br/>
   <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Daily+Challenge" alt="Daily Challenge" width="400"/>
   <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Leaderboard" alt="Leaderboard" width="400"/>
